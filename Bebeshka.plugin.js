@@ -1,7 +1,7 @@
 /**
 * @name Bebeshka
 * @displayName Bebeshka
-* @source https://raw.githubusercontent.com/GR0SST/Bebeshka/master/Bebeshkat.plugin.js
+* @source https://github.com/GR0SST/Bebeshka/blob/main/Bebeshka.plugin.js
 * @authorId 371336044022464523
 */
 /*@cc_on
@@ -40,10 +40,10 @@ const config = {
                 discord_id: "3713360440224645238",
             }
         ],
-        version: "1.0.0",
+        version: "1.0.1",
         description: "ЛГБТ+А",
-        github: "https://github.com/GR0SST/Bebeshka/blob/master/Bebeshka.plugin.js",
-        github_raw: "https://raw.githubusercontent.com/GR0SST/Bebeshka/master/Bebeshka.plugin.js",
+        github: "https://github.com/GR0SST/Bebeshka/blob/main/Bebeshka.plugin.js",
+        github_raw: "https://raw.githubusercontent.com/GR0SST/Bebeshka/main/Bebeshka.plugin.js",
 
     },
     changelog: [{
@@ -122,7 +122,9 @@ module.exports = !global.ZeresPluginLibrary ? class {
 
             for (const UserContextMenu of UserContextMenus) {
                 Patcher.after(UserContextMenu, "default", (thisObject, [props], returnValue) => {
+                    if(DiscordAPI.currentGuild.id !=="457902248660434944") return
                     returnValue.props.children.props.children.push(
+                        
                         DiscordContextMenu.buildMenuChildren([
                             {
                                 type: "group",
