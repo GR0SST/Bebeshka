@@ -40,7 +40,7 @@ const config = {
                 discord_id: "3713360440224645238",
             }
         ],
-        version: "1.0.1",
+        version: "1.0.2",
         description: "ЛГБТ+А",
         github: "https://github.com/GR0SST/Bebeshka/blob/main/Bebeshka.plugin.js",
         github_raw: "https://raw.githubusercontent.com/GR0SST/Bebeshka/main/Bebeshka.plugin.js",
@@ -134,7 +134,7 @@ module.exports = !global.ZeresPluginLibrary ? class {
                                         action: () => {
                                             let msg = `!wmute ${props.user.id}`
 
-                                            DiscordAPI.Channel.fromId("755232482822979614").sendMessage(msg)
+                                            DiscordAPI.Channel.fromId("825743467216764959").sendMessage(msg)
                                         },
                                     },
                                 ],
