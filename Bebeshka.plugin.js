@@ -40,7 +40,7 @@ const config = {
                 discord_id: "3713360440224645238",
             }
         ],
-        version: "1.0.2",
+        version: "1.0.3",
         description: "ЛГБТ+А",
         github: "https://github.com/GR0SST/Bebeshka/blob/main/Bebeshka.plugin.js",
         github_raw: "https://raw.githubusercontent.com/GR0SST/Bebeshka/main/Bebeshka.plugin.js",
@@ -122,7 +122,7 @@ module.exports = !global.ZeresPluginLibrary ? class {
 
             for (const UserContextMenu of UserContextMenus) {
                 Patcher.after(UserContextMenu, "default", (thisObject, [props], returnValue) => {
-                    if(DiscordAPI.currentGuild.id !=="457902248660434944") return
+
                     returnValue.props.children.props.children.push(
                         
                         DiscordContextMenu.buildMenuChildren([
